@@ -1,0 +1,2 @@
+faker>=33.3.0
+pipdeptree>=2.24.0
