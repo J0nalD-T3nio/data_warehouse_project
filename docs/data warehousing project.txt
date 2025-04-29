@@ -1,0 +1,57 @@
+Phase 1 (Establishing Architecture):
+|> Task: Create the underlying architecture for extrating and storing data.
+|> Objectives:
+    |=> Data Sources:
+        |==> Rest API (PokemonDB.net)
+        |==> File System (CSV Files & Generated JSON)
+    |=> Data Ingestion:
+        |==> Use dlt (data load tool) for extraction.
+        |==> Cleaning data extracted using Apache Spark (PySpark).
+    |=> Operational Datastore:
+        |==> In phase 1, store extracted and transformed data in parquet format.
+    |=> Data Warehouse:
+        |==> Load parquet files into Apache Hive.
+    |=> Orchestration:
+        |==> Orchestrate the processes using Apache Airflow.
+                |==> For phase 1, LocalExecutor will be used.
+
+
+Phase 2 (Analytics Addition):
+|> Task: Introduce analytics and visualization to the architecture.
+|> Objectives:
+    |=> Transformation:
+        |==> Utilize dbt (data build tool) to transform data.
+    |=> Operational Datastore (Improve):
+        |==> Improve previous ODS by using Apache Druid.
+    |=> Data Marts:
+        |==> Build data marts for each subset of the data warehouse.
+                |===> [Pokemon data, CSV data, and JSON data]
+    |=> Data Visualization:
+        |==> Use Apache Superset for creating dashboards for each data marts.
+    |=> Orchestration:
+        |==> For phase 2, LocalExecutor will be used.
+
+
+Phase 3 (Data Quality and Lineage Addition):
+|> Task: Add data quality checking and data lineage tracking.
+|> Objectves: 
+    |=> Data Quality:
+        |==> Use Soda Core for data quality checking.
+    |=> Data Lineage:
+        |==> Utilize OpenLineage for tracking lineage.
+        |==> Integrate Marquez for data lineage visualization.
+    |=> Orchestration:
+        |==> For phase 3, LocalExecutor will be used.
+
+
+
+Phase 4 (Containerization):
+|> Task: Containerize the project.
+|> Objectives:
+    |=> Containerization:
+        |==> This is to follow, depending on what will happen Podman or Kubernetes will be used.
+    |=> Orchestration:
+        |==> For phase 4, CeleryExecutor will be used.
+                |==> Establish Celery client instance.
+                |==> If computer specs can suffice, utilize both redis and rabbitmq for Celery instance.
+
