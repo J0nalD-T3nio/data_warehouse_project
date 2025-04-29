@@ -1,3 +1,15 @@
-.venv/
-architectures/Phase_1/.$Data Warehouse Project - Phase 1.drawio.png.bkp
-architectures/Phase_1/.$Data Warehouse Project.drawio.png.bkp
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+
+# Drawio stuff
+docs/Phase_1/.$data_warehouse_project-phase1.drawio.png.bkp
+docs/Phase_1/.$data_warehouse_project.drawio.png.bkp
